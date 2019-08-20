@@ -34,12 +34,10 @@ h1, h2, h3, h4, h5, h6 {
 .main-section{
     position: relative;
     top: -200px; left: 338px;
-    float: right;
+    float: lefts;
     background-color: #DDE3FD
 }
 
 .footer-section{
-    position: relative;
-    top: -150px; left: 338px;
-    float: left;
+    /* position: relative; */
 }
