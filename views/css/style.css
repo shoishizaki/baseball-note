@@ -32,10 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-section{
-    position: relative;
-    top: -200px; left: 338px;
-    float: lefts;
-    background-color: #DDE3FD
+    background-color: #DDE3FD;
 }
 
 .footer-section{
