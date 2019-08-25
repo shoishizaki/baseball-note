@@ -16,8 +16,10 @@
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap" rel="stylesheet">
 
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 
-    <title>Hello, world!</title>
+    <title>games result page</title>
   </head>
   <body>
     <section class="navbar-section">
@@ -48,13 +50,207 @@
     <section class="main-section">
       <div class="col-9">  
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <h1>Welcome to my website</h1>  
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <h1>成績確認</h1>  
+          <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">成績一覧</th>
+                    <th scope="col">打席</th>
+                    <th scope="col">打数</th>
+                    <th scope="col">安打数</th>
+                    <th scope="col">打率</th>
+                    <th scope="col">単打</th>
+                    <th scope="col">２塁打</th>
+                    <th scope="col">３塁打</th>
+                    <th scope="col">打点</th>
+                    <th scope="col">四死球</th>
+                    <th scope="col">三振</th>
+                    <th scope="col">犠打</th>
+                    <th scope="col">盗塁</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">8/13</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/15</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8/17</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">最近１０試合の成績</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">通算成績</th>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
       </div> 
     </section>   
+
+    <div class="container">
+      <h2>打撃割合</h2>
+    <div>
+    <canvas id="myChart" ></canvas>
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["単打", "２塁打", "３塁打", "本塁打", "ゴロアウト", "フライアウト", "三振"],
+        datasets: [{
+          backgroundColor: [
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c",
+            "#34495e"
+          ],
+          data: [12, 19, 3, 17, 28, 24, 7]
+        }]
+      }
+    });
+    </script>
+
+　  <div class="container">
+      <h2>打撃場所割合</h2>
+　  <div>
+    <canvas id="myChart-2" ></canvas>
+    <script>
+        var ctx = document.getElementById("myChart-2").getContext('2d');
+    var myChart_2 = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["投手", "捕手", "１塁手", "２塁手", "３塁手", "遊撃手", "左翼手", "中堅手"],
+        datasets: [{
+          backgroundColor: [
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c",
+            "#34495e",
+            "#091034",
+            "#DDE3FD"
+          ],
+          data: [12, 19, 3, 17, 28, 24, 7, 9, 5]
+        }]
+      }
+    });
+    </script>
 
     <section class="footer-section">
       <footer>
